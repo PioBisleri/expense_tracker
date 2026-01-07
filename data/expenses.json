@@ -7,10 +7,17 @@
         "date": "2026-01-08"
     },
     {
-        "id": 1,
+        "id": 2,
         "item": "Coffee",
-        "amount": 5,
+        "amount": 5.0,
         "category": "Food",
+        "date": "2026-01-08"
+    },
+    {
+        "id": 3,
+        "item": "Notebook",
+        "amount": 7.5,
+        "category": "Education",
         "date": "2026-01-08"
     }
 ]
