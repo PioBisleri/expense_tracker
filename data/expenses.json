@@ -1,0 +1,16 @@
+[
+    {
+        "id": 0,
+        "item": "Notebook",
+        "amount": 7.5,
+        "category": "Education",
+        "date": "2026-01-08"
+    },
+    {
+        "id": 1,
+        "item": "Coffee",
+        "amount": 5,
+        "category": "Food",
+        "date": "2026-01-08"
+    }
+]
