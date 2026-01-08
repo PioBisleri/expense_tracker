@@ -1,7 +1,9 @@
+from datetime import datetime
+from utils.validators import validate_amount, validate_date, validate_category
 from core.expense_manager import (
     add_expense, get_expenses_by_date_range,
     get_total_by_category, delete_expense,
-    save_expenses, load_expenses
+    save_expenses, load_expenses, load_categories
 )
 
 # Load existing data
@@ -20,9 +22,32 @@ while True:
     if choice == "1":
       # Add Expense
         item = input("Item: ").strip()
-        amount = float(input("Amount: "))
-        category = input("Category: ").strip()
-        date = input("Date (YYYY-MM-DD): ").strip()
+        
+        # Validate amount
+        is_valid, result = validate_amount(input("Amount: "))
+        if not is_valid:
+          print(result)
+          continue
+        amount = result
+        
+        # Load categories & Validate category
+        categories = load_categories()
+        print("Available categories:", ", ".join(categories))
+        category_input = input("Category: ").strip()
+        is_valid, result = validate_category(category_input, categories)
+        if not is_valid:
+          print(result)
+          continue
+        category = result
+        
+        # Setup time &  Validate date
+        date_input = input("Date (YYYY-MM-DD) [Enter for today]: ").strip()
+        is_valid, result = validate_date(date_input)
+        if not is_valid:
+          print(result)
+          continue
+        date = result
+        
         add_expense(expenses, item, amount, category, date)
         print("Expense added!")
         pass

@@ -40,7 +40,7 @@ def delete_expense(expenses, expense_id):
             return True  # success
     return False  # not found
 
-
+# Gets expenses between two dates
 def get_expenses_by_date_range(expenses, start_date, end_date):
     filtered = []
     for expense in expenses:
@@ -48,9 +48,18 @@ def get_expenses_by_date_range(expenses, start_date, end_date):
             filtered.append(expense)
     return filtered
 
+# Gets total spending between two dates
 def get_total_by_date_range(expenses, start_date, end_date):
     filtered = get_expenses_by_date_range(expenses, start_date, end_date)
     total = 0
     for expense in filtered:
         total += expense["amount"]
     return total
+
+# In core/expense_manager.py
+def load_categories(filename="data/categories.json"):
+    try:
+        with open(filename, 'r') as file:
+            return json.load(file)
+    except (FileNotFoundError, json.JSONDecodeError):
+        return ["Food", "Other"]  # fallback

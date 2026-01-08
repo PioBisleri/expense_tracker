@@ -12,5 +12,26 @@
         "amount": 7.0,
         "category": "Food",
         "date": "2026-01-08"
+    },
+    {
+        "id": 2,
+        "item": "Burger",
+        "amount": 15.0,
+        "category": "Food",
+        "date": "2026-01-08"
+    },
+    {
+        "id": 3,
+        "item": "Xbox",
+        "amount": 60.0,
+        "category": "Entertainment",
+        "date": "2026-01-08"
+    },
+    {
+        "id": 4,
+        "item": "Detergent",
+        "amount": 7.0,
+        "category": "Health",
+        "date": "2026-01-08"
     }
 ]
