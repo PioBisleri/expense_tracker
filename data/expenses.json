@@ -1,23 +1,16 @@
 [
     {
         "id": 0,
-        "item": "Notebook",
-        "amount": 7.5,
-        "category": "Education",
-        "date": "2026-01-08"
-    },
-    {
-        "id": 2,
         "item": "Coffee",
         "amount": 5.0,
         "category": "Food",
         "date": "2026-01-08"
     },
     {
-        "id": 3,
-        "item": "Notebook",
-        "amount": 7.5,
-        "category": "Education",
+        "id": 1,
+        "item": "Sandwich",
+        "amount": 7.0,
+        "category": "Food",
         "date": "2026-01-08"
     }
 ]

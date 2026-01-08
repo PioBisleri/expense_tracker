@@ -39,3 +39,18 @@ def delete_expense(expenses, expense_id):
             del expenses[i]
             return True  # success
     return False  # not found
+
+
+def get_expenses_by_date_range(expenses, start_date, end_date):
+    filtered = []
+    for expense in expenses:
+        if start_date <= expense["date"] <= end_date:
+            filtered.append(expense)
+    return filtered
+
+def get_total_by_date_range(expenses, start_date, end_date):
+    filtered = get_expenses_by_date_range(expenses, start_date, end_date)
+    total = 0
+    for expense in filtered:
+        total += expense["amount"]
+    return total
